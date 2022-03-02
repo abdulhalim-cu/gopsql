@@ -1,4 +1,4 @@
-package users
+package gopsql
 
 type User struct {
 	ID       int

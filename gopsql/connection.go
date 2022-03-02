@@ -5,6 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"strings"
+
+	_ "github.com/lib/pq"
 )
 
 var (
@@ -95,6 +97,9 @@ func DeleteUser(id int) error {
 
 	statement := fmt.Sprintf(`SELECT "username" FROM "users" WHERE id=%d`, id)
 	rows, err := db.Query(statement)
+	if err != nil {
+		return err
+	}
 	var username string
 	for rows.Next() {
 		err = rows.Scan(&username)

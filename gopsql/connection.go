@@ -65,7 +65,7 @@ func AddUser(d Userdata) int {
 
 	userID := exists(d.Username)
 	if userID != -1 {
-		fmt.Println("User already exists:", Username)
+		fmt.Println("User already exists:", d.Username)
 		return -1
 	}
 

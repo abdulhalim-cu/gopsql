@@ -69,7 +69,7 @@ func AddUser(d Userdata) int {
 		return -1
 	}
 
-	insertStatement := `INSERT INTO "Users" ("username") VALUES($1)`
+	insertStatement := `INSERT INTO "users" ("username") VALUES($1)`
 	_, err = db.Exec(insertStatement, d.Username)
 	if err != nil {
 		fmt.Println(err)
